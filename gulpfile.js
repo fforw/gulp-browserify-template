@@ -1,9 +1,11 @@
+
 var uglify = require('gulp-uglify');
 var gulp = require('gulp');
+var browserify = require('browserify');
+var sourceStream = require("vinyl-source-stream");
+var streamify = require('gulp-streamify')
 
-var browserify = require('gulp-browserify');
-
-var mainFile = "src/script/main.js";
+var mainFile = "./src/script/main";
 
 var browserifyConfig = {
     debug : !gulp.env.production
@@ -18,10 +20,15 @@ var paths = {
 // Basic usage
 
 gulp.task('script', function() {
-    // Single entry point to browserify
-    gulp.src(mainFile)
-        .pipe(browserify(browserifyConfig))
-//        .pipe(uglify())
+
+    var stream = browserify({
+        entries: mainFile
+    }).bundle({
+        debug: true
+    });
+
+    stream.pipe(sourceStream("main.js"))
+//        .pipe(streamify(uglify()))
         .pipe(gulp.dest("build"));
 });
 
