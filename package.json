@@ -1,14 +1,19 @@
 {
   "name": "gulp-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description" : "Basic project setup with gulp, browserify. Mocha and power assert for testing.",
+  "repository" : "https://github.com/fforw/gulp-browserify-template.git",
   "devDependencies": {
-    "gulp-watch": "~0.5.0",
-    "gulp-util": "~2.2.14",
-    "gulp": "~3.5.2",
-    "gulp-uglify": "~0.2.1",
+    "browserify": "^7.0.3",
+    "gulp": "~3.8.10",
+    "gulp-espower": "^0.10.0",
+    "gulp-mocha": "^2.0.0",
     "gulp-streamify": "0.0.5",
-    "vinyl-source-stream": "^0.1.1",
-    "browserify": "^3.38.1"
+    "gulp-uglify": "~1.0.2",
+    "gulp-util": "~3.0.1",
+    "gulp-watch": "~3.0.0",
+    "power-assert": "^0.10.0",
+    "vinyl-source-stream": "^1.0.0"
   },
   "dependencies": {}
 }
